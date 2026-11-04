@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+//////////////////////////////
+//
+//  Function Name : SumNonFact
+//  Description   : Accept number from user and display sum its non factors
+//  Input         : Integer
+//  Output        : Integer
+//  Author        : Prathamesh Vitthal Gaikwad
+//  Date          : 04/11/2026
+//
+//////////////////////////////
+
+int SumNonFact(int iNo){
+    int iCnt = 0;
+    int iSum = 0;
+
+    if(iNo < 0){
+        iNo = -iNo;
+    }
+
+    for(iCnt = 1; iCnt <= iNo; iCnt++){
+        if(iNo % iCnt != 0){
+            iSum = iSum + iCnt;
+        }
+    }
+
+    return iSum;
+
+}
+
+
+
+int main(){
+    int iValue = 0;
+    int iRet = 0;
+
+    printf("Enter the number : ");
+    scanf("%d",&iValue);
+
+    iRet = SumNonFact(iValue);
+
+    printf("Summation is : %d\n",iRet);
+
+    return EXIT_SUCCESS;
+}
